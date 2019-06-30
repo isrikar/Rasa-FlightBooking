@@ -1,0 +1,132 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - flightBooking
+  - inform
+  - out_of_scope
+  - directFlight
+  - thanks
+
+entities:
+  - username
+  - destination
+  - source
+  - flightCode
+  - time
+  - phone-number
+  - ID
+
+slots:
+  username:
+    type: unfeaturized
+  destination:
+    type: unfeaturized
+  source:
+    type: unfeaturized
+  flightCode:
+    type: unfeaturized
+  time:
+    type: unfeaturized
+  phone-number:
+    type: unfeaturized
+  ID:
+    type: unfeaturized
+  FlightNo:
+    type: unfeaturized
+  Airlines:
+    type: unfeaturized
+  from:
+    type: unfeaturized
+  to:
+    type: unfeaturized
+  
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- action_search_flights
+- utter_out_of_scope
+- utter_boarding
+- utter_destination
+- utter_askId
+- utter_askUsername
+- utter_askPhone
+- action_ack_makereservation
+- utter_submit
+- action_search_direct_flights
+- utter_welcome
+- action_save_origin
+- action_save_destination
+- action_save_date
+- utter_date
+- action_save_id
+- action_save_contact
+- action_save_name
+
+forms:
+- flight_form
+
+
+templates:
+  utter_submit:
+  - text: "All done!"
+  utter_greet:
+  - text: "Hi, I am your flight booking assistant. I am help you with flight Booking please let me know how can I help you"
+  
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_out_of_scope:
+    - text: "Sorry, I can’t deal with that request."
+    - text: "I'm sorry, I can't handle that request."
+    - text: "I can't help you with that, I'm sorry."
+    - text: "Even a Rasa bot is not completely perfect - it seems like I can't handle that request."
+
+  utter_askId:
+    - text: "Okay, To proceed further for booking Please let me know your last 6 digit of any govt.ID"
+  
+  utter_askUsername:
+    - text: "Okay,now please let me know your name"
+  
+  utter_askPhone:
+    - text: "Okay,now please let me know your Phone Number"
+  
+  utter_ask_from:
+    - text: "Please enter valid source"
+  
+  utter_ask_to:
+    - text: "Please enter valid destination"
+  
+  utter_ask_time:
+    - text: "Please enter time"
+  
+  utter_welcome:
+    - text: "Welcome"
+    - text: "Welcome :)"
+    - text: "Welcome ;)"
+  
+  utter_boarding:
+  - text: "Please let me know where are you flying from?"
+  
+  utter_destination:
+  - text: "Okay, where do you want to fly"
+  
+  utter_date:
+  - text: "What is the date for your travel?" 
+  

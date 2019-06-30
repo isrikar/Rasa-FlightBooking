@@ -1,0 +1,31 @@
+language: en
+pipeline:
+- name: WhitespaceTokenizer
+- name: CRFEntityExtractor
+- name: RegexFeaturizer
+- name: CountVectorsFeaturizer
+  OOV_token: oov
+  token_pattern: (?u)\b\w+\b
+- name: EmbeddingIntentClassifier
+  epochs: 50
+- name: DucklingHTTPExtractor
+  url: http://emover.ddns.net:8000
+  dimensions:
+  - time
+  - email
+  - phone-number
+- name: EntitySynonymMapper
+- name: CountVectorsFeaturizer
+  token_pattern: (?u)\b\w+\b
+
+policies:
+- epochs: 50
+  max_history: 6
+  name: KerasPolicy
+- max_history: 6
+  name: MemoizationPolicy
+- core_threshold: 0.3
+  name: TwoStageFallbackPolicy
+  nlu_threshold: 0.8
+- name: FormPolicy
+- name: MappingPolicy
