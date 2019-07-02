@@ -4,8 +4,6 @@ pipeline:
 - name: CRFEntityExtractor
 - name: RegexFeaturizer
 - name: CountVectorsFeaturizer
-  OOV_token: oov
-  token_pattern: (?u)\b\w+\b
 - name: EmbeddingIntentClassifier
   epochs: 50
 - name: DucklingHTTPExtractor

@@ -121,7 +121,7 @@ class ActionMakeReservation(Action):
         
         for i in range(0,len(data["inst"])):
             if(flightNo==data["inst"][i]["FlightNo"]):
-                message=data["inst"][i]["Airlines"]+" Flight Booked"
+                message=data["inst"][i]["Airlines"]+" Flight No :"+data["inst"][i]["FlightNo"]+" has been booked.Your ticket has been booked on ref number YM45FH"
         
         dispatcher.utter_message(message)
         return []
